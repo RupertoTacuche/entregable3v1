@@ -6,7 +6,7 @@ const ResidentList = ({location}) => {
     const residents = location?.residents
 
   return (
-    <section>
+    <section className='flex flex-col items-center gap-4 md:flex-row md:flex-wrap md:justify-center'>
         {
             residents?.map((resident) => (
                 <ResidentCard key={resident} resident={resident}/>
