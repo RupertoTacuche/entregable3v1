@@ -12,23 +12,24 @@ const ResidentCard = ({resident}) => {
             .catch((err)  => console.log(err))
     },[])
   return (
-    <article>
+    <article className='border-2 border-[#8EFF8B] w-[90%] md:w-[300px] md:h-full'>
         <div>
-            <img src={residentInfo?.image} alt="" />
+            <img className=' bg-cover w-full' src={residentInfo?.image} alt="" />
         </div>
-    <section>
-        <h3>{residentInfo?.name}</h3>
-        <ul>
-            <li>
-                <span>Species</span>
+    <section className='py-3 px-1'>
+        <h3 className='text-[28px] font-semibold ml-5'>{residentInfo?.name}</h3>
+        <hr className='border-1 border-[#084851] mb-3'/>
+        <ul className='ml-5'>
+            <li className='flex gap-3'>
+                <span className=' text-[#938686] text-[14px] w-[100px]'>Species</span>
                 <span>{residentInfo?.species}</span>
             </li>
-            <li>
-                <span>Origin</span>
+            <li className='flex gap-3'>
+                <span className=' text-[#938686] text-[14px] w-[100px]'>Origin</span>
                 <span>{residentInfo?.origin.name}</span>
             </li>
-            <li>
-                <span>Times appear</span>
+            <li className='flex gap-3'>
+                <span className=' text-[#938686] text-[14px] w-[100px]'>Times appear</span>
                 <span>{residentInfo?.episode.length}</span>
             </li>
          
