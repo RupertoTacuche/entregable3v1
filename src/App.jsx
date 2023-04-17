@@ -21,6 +21,7 @@ function App() {
     .catch((err) => console.log(err))
     setresulSearch([])
     setinputValue(name)
+    
   }
 useEffect(() => {
   const URL = `https://rickandmortyapi.com/api/location/${getRandomDimension()}`
@@ -36,7 +37,12 @@ axios.get('https://rickandmortyapi.com/api/location')
 .then(res => setlocationAll(res.data.results))
 }, [])
 
+const captureValue = () => {
+
+}
+
 const handleSearch = (e) => {
+  
   setinputValue(e.target.value)  
   const result = locationAll.filter(locat => locat.name.trim().includes(inputValue))
   setresulSearch(result)
@@ -49,11 +55,11 @@ const handleSearch = (e) => {
   return (
     <div className="App">
       <Header/>
-      <form onSubmit={handleSubmit} className='flex flex-col  items-center  relative bottom-24'>
-        <div className='flex h-[40px] w-[96%] md:w-[70%] lg:w-[60%] lg:h-[60px]'>
+      <form  className='flex flex-col  items-center  relative bottom-24'>
+        <div className='flex justify-center h-[40px] w-[96%] md:w-[70%] lg:w-[60%] lg:h-[60px]'>
           <input id='locationId' placeholder='Type a location name...'className='border-2 border-[#8EFF8B] w-[80%] bg-transparent pl-3 ' type="text" onChange={handleSearch} value={inputValue}/>
           
-          <button className='bg-[#8EFF8B] w-[20%]'> <i className='bx bx-search text-lg border-2 border-[#8EFF8B]'></i></button>
+          {/* <button className=' bg-[#8EFF8B] w-[20%]'> <i className='bx bx-search text-lg border-2 border-[#8EFF8B]'></i></button> */}
         </div>
         <div className=' text-black bg-white w-[96%] md:w-[70%] lg:w-[60%]'>
           {
